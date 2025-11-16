@@ -5,20 +5,27 @@ import {Fragment, useState} from "react";
 import IntroSection from "./components/IntroSection.jsx";
 import TabsSection from "./components/TabsSection.jsx";
 import FeedbackSection from "./components/FeedbackSection.jsx";
+import EffectSection from "./components/EffectSection.jsx";
 
 export default function App() {
 
-    const [tab, setTab] = useState('feedback');
+    const [tab, setTab] = useState('effects');
 // debugger;
+
+
+    // setTimeout(()=>{
+    //     setShowHeader(false)
+    // },3000)
+    const [showHeader, setShowHeader] = useState(true);
 
     return (
         <Fragment>
-            <Header/>
+            {showHeader && <Header/>}
             <main className="App-main">
                 <IntroSection/>
 
                 <TabsSection active={tab} onChange={function (current) {
-                    debugger;
+                    // debugger;
                     setTab(current);
                 }}/>
 
@@ -32,6 +39,11 @@ export default function App() {
                 {tab === 'feedback' && (
                     <>
                         <FeedbackSection/>
+                    </>
+                )}
+                {tab === 'effects' && (
+                    <>
+                        <EffectSection/>
                     </>
                 )}
 

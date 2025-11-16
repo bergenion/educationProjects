@@ -13,10 +13,10 @@ export default function () {
     }
 
 
-    return <section><Button isActive={content === 'way'} onTouch={() => handleClick('way')}>{buttonTexts[0]}</Button>
-        <Button isActive={content === 'easy'} onTouch={() => handleClick('easy')}>{buttonTexts[2]}</Button>
+    return <section><Button isActive={content === 'way'} onClick={() => handleClick('way')}>{buttonTexts[0]}</Button>
+        <Button isActive={content === 'easy'} onClick={() => handleClick('easy')}>{buttonTexts[2]}</Button>
         <Button isActive={content === 'program'}
-                onTouch={() => handleClick('program')}>{buttonTexts[3]}</Button>
+                onClick={() => handleClick('program')}>{buttonTexts[3]}</Button>
 
         <p>{differences[content]}</p>
     </section>
